@@ -54,9 +54,9 @@ services:
       - PGID=1500
       - TZ=Europe/Rome
     volumes:
-      - /path/to/data:/media/config/sonarr-config
-      - /path/to/tvseries:/media/torrents/tv-series #optional
-      - /path/to/downloadclient-downloads:/media/torrents/downloads #optional
+      - /path/to/data:/data/config/sonarr
+      - /path/to/tvseries:/data/media/tv-series #optional
+      - /path/to/downloadclient-downloads:/data/torrents/tv-series #optional
     ports:
       - 8989:8989
     restart: unless-stopped
