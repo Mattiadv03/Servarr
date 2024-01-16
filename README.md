@@ -3,6 +3,13 @@ Docker compose file and other stuff related to Servarr's Suite
 
 ## Folder Tree Structure
 data
+├── config // Containes all config file for the media docker
+│  ├── qbittorrent
+│  ├── prowlarr
+|  ├── radarr
+|  ├── sonarr
+|  ├── lidarr
+│  └── readarr
 ├── torrents // Containes all file downloaded by QBitTorrent
 │  ├── movies
 │  ├── music
