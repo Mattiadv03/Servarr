@@ -84,9 +84,9 @@ services:
       - PGID=1500
       - TZ=Europe/Rome
     volumes:
-      - /path/to/appdata/config:/media/config/lidarr-config
-      - /path/to/music:/media/torrents/music #optional
-      - /path/to/downloads:/media/torrents/downloads #optional
+      - /path/to/appdata/config:/data/config/lidarr
+      - /path/to/music:/data/media/music #optional
+      - /path/to/downloads:/data/torrents/music #optional
     ports:
       - 8686:8686
     restart: unless-stopped
