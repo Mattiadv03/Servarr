@@ -39,9 +39,9 @@ services:
       - PGID=1500
       - TZ=Europe/Rome
     volumes:
-      - /path/to/data:/media/config/radarr-config
-      - /path/to/movies:/media/torrents/movies #optional
-      - /path/to/downloadclient-downloads:/media/torrents/downloads #optional
+      - /path/to/data:/data/config/radarr
+      - /path/to/movies:/data/media/movies #optional
+      - /path/to/downloadclient-downloads:/data/torrents/movies #optional
     ports:
       - 7878:7878
     restart: unless-stopped
