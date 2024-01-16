@@ -26,7 +26,7 @@ services:
       - PGID=1500
       - TZ=Europe/Rome
     volumes:
-      - /path/to/data:/media/config/prowlarr-config
+      - /path/to/data:/media/config/prowlarr
     ports:
       - 9696:9696
     restart: unless-stopped
