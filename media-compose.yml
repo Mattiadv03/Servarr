@@ -69,9 +69,9 @@ services:
       - PGID=1500
       - TZ=Europe/Rome
     volumes:
-      - /path/to/data:/media/config/readarr-config
-      - /path/to/books:/media/torrents/books #optional
-      - /path/to/downloadclient-downloads:/media/torrents/downloads #optional
+      - /path/to/data:/data/config/readarr
+      - /path/to/books:/data/media/books #optional
+      - /path/to/downloadclient-downloads:/data/torrents/books #optional
     ports:
       - 8787:8787
     restart: unless-stopped
