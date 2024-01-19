@@ -10,8 +10,8 @@ services:
       - TZ=Europe/Rome
       - WEBUI_PORT=8080
     volumes:
-      - /path/to/appdata/config:/data/config/qbittorrent
-      - /path/to/downloads:/data/torrents/
+      - /path/to/appdata/config:/mnt/discoesterno/data/config/qbittorrent
+      - /path/to/downloads:/mnt/discoesterno/data/torrents/
     ports:
       - 8080:8080
       - 6881:6881
@@ -26,7 +26,7 @@ services:
       - PGID=1500
       - TZ=Europe/Rome
     volumes:
-      - /path/to/data:/data/config/prowlarr
+      - /path/to/data:/mnt/discoesterno/data/config/prowlarr
     ports:
       - 9696:9696
     restart: unless-stopped
@@ -39,9 +39,9 @@ services:
       - PGID=1500
       - TZ=Europe/Rome
     volumes:
-      - /path/to/data:/data/config/radarr
-      - /path/to/movies:/data/media/movies #optional
-      - /path/to/downloadclient-downloads:/data/torrents/movies #optional
+      - /path/to/data:/mnt/discoesterno/data/config/radarr
+      - /path/to/movies:/mnt/discoesterno/data/media/movies #optional
+      - /path/to/downloadclient-downloads:/mnt/discoesterno/data/torrents/movies #optional
     ports:
       - 7878:7878
     restart: unless-stopped
@@ -54,9 +54,9 @@ services:
       - PGID=1500
       - TZ=Europe/Rome
     volumes:
-      - /path/to/data:/data/config/sonarr
-      - /path/to/tvseries:/data/media/tv-series #optional
-      - /path/to/downloadclient-downloads:/data/torrents/tv-series #optional
+      - /path/to/data:/mnt/discoesterno/data/config/sonarr
+      - /path/to/tvseries:/mnt/discoesterno/data/media/tv-series #optional
+      - /path/to/downloadclient-downloads:/mnt/discoesterno/data/torrents/tv-series #optional
     ports:
       - 8989:8989
     restart: unless-stopped
@@ -69,9 +69,9 @@ services:
       - PGID=1500
       - TZ=Europe/Rome
     volumes:
-      - /path/to/data:/data/config/readarr
-      - /path/to/books:/data/media/books #optional
-      - /path/to/downloadclient-downloads:/data/torrents/books #optional
+      - /path/to/data:/mnt/discoesterno/data/config/readarr
+      - /path/to/books:/mnt/discoesterno/data/media/books #optional
+      - /path/to/downloadclient-downloads:/mnt/discoesterno/data/torrents/books #optional
     ports:
       - 8787:8787
     restart: unless-stopped
@@ -84,9 +84,9 @@ services:
       - PGID=1500
       - TZ=Europe/Rome
     volumes:
-      - /path/to/appdata/config:/data/config/lidarr
-      - /path/to/music:/data/media/music #optional
-      - /path/to/downloads:/data/torrents/music #optional
+      - /path/to/appdata/config:/mnt/discoesterno/data/config/lidarr
+      - /path/to/music:/mnt/discoesterno/data/media/music #optional
+      - /path/to/downloads:/mnt/discoesterno/data/torrents/music #optional
     ports:
       - 8686:8686
     restart: unless-stopped
