@@ -7,5 +7,5 @@ mkdir /data/config/qbittorrent /data/config/prowlarr /data/config/radarr /data/c
 mkdir /data/torrents/movies /data/torrents/tv-series /data/torrents/music /data/torrents/books
 mkdir /data/media/movies /data/media/tv-series /data/media/music /data/media/books
 
-chown :media data/ -R
-chmod 775 data/ -R
+chown :media /data/ -R
+chmod 775 /data/ -R
