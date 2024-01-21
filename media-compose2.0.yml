@@ -3,7 +3,7 @@ services:
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
-     environment:
+    environment:
       - PUID=1510
       - PGID=1500
       - TZ=Europe/Rome
