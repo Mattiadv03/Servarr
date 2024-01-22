@@ -16,3 +16,6 @@ chown readarr /docker/readarr /data/media/music
 
 useradd -u 1560 -g media lidarr
 chown lidarr /docker/lidarr /data/media/books
+
+useradd -u 1580 -g media jellyseerr
+chown lidarr /docker/jellyseerr /data/media
