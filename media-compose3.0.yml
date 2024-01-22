@@ -119,5 +119,5 @@ services:
     volumes:
       - /docker/jellyseerr-config:/app/config
     ports:
-      - "5056:5055"
+      - 5056:5055
     restart: unless-stopped\n
