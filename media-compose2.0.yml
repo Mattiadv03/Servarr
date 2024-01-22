@@ -1,4 +1,5 @@
 ---
+version: "3.1"
 services:
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
@@ -6,10 +7,11 @@ services:
     environment:
       - PUID=1510
       - PGID=1500
+      - UMASK=002
       - TZ=Europe/Rome
       - WEBUI_PORT=8080
     volumes:
-      - /docker/qbittorrent:/config
+      - /docker/qbittorrent-config:/config
       - /data/torrents:/data/torrents/
     ports:
       - 8080:8080
@@ -23,9 +25,10 @@ services:
     environment:
       - PUID=1520
       - PGID=1500
+      - UMASK=002
       - TZ=Europe/Rome
     volumes:
-      - /docker/prowlarr:/config
+      - /docker/prowlarr-config:/config
     ports:
       - 9696:9696
     restart: unless-stopped
@@ -36,9 +39,11 @@ services:
     environment:
       - PUID=1530
       - PGID=1500
+      - UMASK=002
       - TZ=Europe/Rome
     volumes:
-      - /docker/radarr:/config
+      - /docker/radarr-config:/config
+      - /data:/data
     ports:
       - 7878:7878
     restart: unless-stopped
@@ -49,9 +54,11 @@ services:
     environment:
       - PUID=1540
       - PGID=1500
+      - UMASK=002
       - TZ=Europe/Rome
     volumes:
-      - /docker/sonarr:/config
+      - /docker/sonarr-config:/config
+      - /data:/data
     ports:
       - 8989:8989
     restart: unless-stopped
@@ -62,9 +69,11 @@ services:
     environment:
       - PUID=1550
       - PGID=1500
+      - UMASK=002
       - TZ=Europe/Rome
     volumes:
-      - /docker/readarr:/config
+      - /docker/readarr-config:/config
+      - /data:/data
     ports:
       - 8787:8787
     restart: unless-stopped
@@ -75,9 +84,40 @@ services:
     environment:
       - PUID=1560
       - PGID=1500
+      - UMASK=002
       - TZ=Europe/Rome
     volumes:
-      - /docker/lidarr:/config
+      - /docker/lidarr-config:/config
+      - /data:/data
     ports:
       - 8686:8686
     restart: unless-stopped
+
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    environment:
+      - PUID=1570
+      - PGID=1500
+      - UMASK=002
+      - TZ=Europe/Rome
+    volumes:
+      - /docker/jellyfin-config:/config
+      - /data/media:/data
+    ports:
+      - 8096:8096
+    restart: unless-stopped
+
+  jellyseerr:
+    image: fallenbagel/jellyseerr:latest
+    container_name: jellyseerr
+    environment:
+      - PUID=1580
+      - PGID=1500
+      - UMASK=002
+      - TZ=Europe/Rome
+    volumes:
+      - /docker/jellyseerr-config:/app/config
+    ports:
+      - "5056:5055"
+    restart: unless-stopped\n
